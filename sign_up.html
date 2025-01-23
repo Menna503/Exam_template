@@ -9,61 +9,85 @@
         *{
             margin: 0px;
             padding: 0px; 
+        
         }
         .row{
             margin-right: 0px ;
             margin-left: 0px;
+            /* background-color:  #EAE9F4; */
+        
         }
        
         img{
             width: 100%;
             height: auto;
         }
-        .sign-container {
+        
+      .hidden{
+
+         visibility: hidden;;
+        }
+        .error{
+            color: red;
+        }
+        label{
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+ @media (min-width: 768px) {
+    .sign-container {
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
         }
+}
     </style>
 </head>
 <body>
-    <main class="  bg-light  sign-container">
-        <div class="row " >
-            <div class=" col-6">
-                <img src="images/ppp.jpg" >
+    <main class="sign-container" style="background-color: #DCDAED;">
+        <div class="row " > 
+            <div class=" col-12 col-md-6 ">
+                <img src="images/exam 1.jpg" >
             </div>
-            <div id="sign_up_form " class="col-6">
+            <div id="sign_up_form " class="col-12 col-md-6">
                 <form id="signup" >
                     <div class="form-group">
-                    <label for="firstname">first name</label>
+                    <label for="firstname " class="ms-2">first name</label>
                     <input id="firstname" type="text" class="form-control" name="UserName">
-                    <small class="form-text text-mute">this field required oogit</small>
+                    <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
                     <div class="form-group">
-                        <label for="lastname">last name</label>
+                        <label for="lastname " class="ms-2">last name</label>
                         <input id="lastname" type="text"class="form-control" >
+                        <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">email</label>
+                        <label for="email" class="ms-2">email</label>
                         <input id="email" type="email" class="form-control" name="UserEmail"   pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}">
+                        <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     <div class="form-group">
-                        <label for="password">password</label>
+                        <label for="password" class="ms-2">password</label>
                         <input id="password" type="password" class="form-control" name="password" >
+                        <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
                     <div class="form-group">
-                        <label for="re_password">re-enter password</label>
-                        <input id="re_password" type="password" class="form-control" >
+                        <label for="confirm_pass" class="ms-2">re-enter password</label>
+                        <input id="confirm_pass" type="password" class="form-control" >
+                        <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
-                   
-                    <button id="submit"class="btn btn-secondery" type="submit">sign up</button>
-                    <p>have already an account ?<a>sign in</a></p>
+                   <div class="d-flex flex-column justify-content-center align-items-center ">
+                    <button id="submit"class="btn w-50 text-light fs-5" style="background-color: #6553D3; " type="submit ">sign up</button>
+                    <p class="text-center">have already an account ?<a href="sign_in.html">sign in</a></p>
+                   </div>
+                  
         
                 </form>
     
