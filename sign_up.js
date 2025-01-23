@@ -94,6 +94,9 @@ signup_form.addEventListener('submit', (e) => {
         window.localStorage.setItem("name", `${first_name.value} ${las_name.value}`);
         window.localStorage.setItem("user_email", user_email.value);
         window.localStorage.setItem("password", confirm_pass.value);
+        inputs.forEach((input) => {
+            input.value="";
+        });
 
         console.log("Form submitted successfully!");
     }
