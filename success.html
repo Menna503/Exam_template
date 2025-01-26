@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px; 
+        
+        }
+        .row{
+            margin-right: 0px ;
+            margin-left: 0px;
+            /* background-color:  #EAE9F4; */
+        
+        }
+       
+        img{
+            width: 100%;
+            height: auto;
+        }
+        
+      .hidden{
+
+         visibility: hidden;;
+        }
+        .error{
+            color: red;
+        }
+        label{
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+ @media (min-width: 768px) {
+    .sign-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+}
+    </style>
+</head>
+<body>
+    <main class="sign-container" style="background-color: #ffffff; ">
+        <div class="rounded-4 p-5 d-flex justify-content-center col-12 col-md-8" style="background-color: #DAD7F6; border: 2px solid #3C2CA0;"> 
+            
+            <div class="d-flex flex-column">  
+             
+                    <img class="h-auto mx-auto" style="width: 80%;" src="images/ready_to_start_img.svg" > 
+                    <h5 style="color:#3C2CA0;">Your Grade is 85% Congratulations Ghada Elsayed !!</h5>
+                  
+                    
+                    
+                   <div class="d-flex flex-column justify-content-center align-items-center ">
+                    <button id="submit"class="btn w-50 text-light fs-5" style="background-color:#3C2CA0; " type="submit ">Back To Exam</button>
+                  
+                </div>
+               
+    
+            </div>
+           
+
+        </div>
+        
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="sign_up.js"></script>
+</body>
+</html>
