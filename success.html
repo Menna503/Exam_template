@@ -5,23 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <style>
-        
-    </style>
 </head>
 <body>
     <main class="sign-container" style="background-color: #ffffff; ">
         <div class="rounded-4 p-5 d-flex justify-content-center col-12 col-md-8" style="background-color: #DAD7F6; border: 2px solid #3C2CA0;"> 
             
-            <div class="d-flex flex-column">  
+            <div class="d-flex flex-column justify-content-center align-items-center">  
              
-                    <img class="h-auto mx-auto" style="width: 80%;" src="images/ready_to_start_img.svg" > 
-                    <h5 style="color:#3C2CA0;">Your Grade is 85% Congratulations Ghada Elsayed !!</h5>
-                  
-                    
+                    <img  style="width: 70%;" src="images/success_img.svg" > 
+                    <h5 id="result" style="color:#3C2CA0;"> </h5>
+                    <h5 id="score" style="color:#3C2CA0;"> </h5>
                     
                    <div class="d-flex flex-column justify-content-center align-items-center ">
-                    <button id="submit"class="btn w-50 text-light fs-5" style="background-color:#3C2CA0; " type="submit ">Back To Exam</button>
+                    <button id="exam_submit"class="btn w-100 mt-4 text-light fs-5" style="background-color:#3C2CA0; " type="submit ">Back To Exam</button>
                   
                 </div>
                
@@ -34,6 +30,6 @@
     </main>
     <link href="style.css" rel="stylesheet" >
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="sign_up.js"></script>
+    <script src="success_and_fail.js"></script>
 </body>
 </html>
