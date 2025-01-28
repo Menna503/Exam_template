@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px; 
+
+}
+.row{
+    margin-right: 0px ;
+    margin-left: 0px;
+    /* background-color:  #EAE9F4; */
+
+}
+.hidden{
+
+    visibility: hidden;;
+   }
+.error{
+       color: red;
+   }
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+label{
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+@media (min-width: 768px) {
+    .sign-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+}
