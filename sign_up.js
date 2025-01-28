@@ -7,17 +7,8 @@ const signup_form = document.getElementById('signup');
 const inputs = document.querySelectorAll('input');
 const errorMessages = document.querySelectorAll('.error');
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const nameRegex = /^[a-zA-Z]+$/;
 
-function showError(element, message) {
-    const errorElement = element.nextElementSibling;
-    errorElement.textContent = message;
-    errorElement.classList.remove('hidden');
-}
-
-function hideError(element) {
-    const errorElement = element.nextElementSibling;
-    errorElement.classList.add('hidden');
-}
 
 function validateName(input) {
     if (input.value === "") {
@@ -26,11 +17,15 @@ function validateName(input) {
     } else if (isFinite(input.value)) {
         showError(input, "*Numbers are not allowed");
         return false;
-    } else {
+    }else if (!nameRegex.test(input.value)) {
+        showError(input, "*Numbers are not allowed");
+        return false; }
+    else {
         hideError(input);
         return true;
     }
 }
+
 
 function validateEmail(input) {
     const localStorageEmail = window.localStorage.getItem("user_email");
@@ -48,7 +43,6 @@ function validateEmail(input) {
         return true;
     }
 }
-
 function validatePassword(input) {
     if (input.value === "") {
         showError(input, "*This field is required");
@@ -61,7 +55,6 @@ function validatePassword(input) {
         return true;
     }
 }
-
 function validateConfirmPassword(input, password) {
     if (input.value === "") {
         showError(input, "*This field is required");
@@ -100,6 +93,7 @@ signup_form.addEventListener('submit', (e) => {
 
         inputs.forEach(input => input.value = "");
         console.log("Form submitted successfully!");
+        window.location.href = "ready_to_start.html";
     }
 });
 

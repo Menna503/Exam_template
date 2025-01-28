@@ -31,19 +31,19 @@
                 <form id="signup" >
                     <div class="form-group">
                     <label for="firstname " class="ms-2">first name</label>
-                    <input id="firstname" type="text" class="form-control" name="UserName">
+                    <input id="firstname" type="text" class="form-control" name="UserName" pattern="^[a-zA-Z]+$">
                     <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
                     <div class="form-group">
                         <label for="lastname " class="ms-2">last name</label>
-                        <input id="lastname" type="text"class="form-control" >
+                        <input id="lastname" type="text"class="form-control" pattern="^[a-zA-Z]+$" >
                         <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     
                     <div class="form-group">
                         <label for="email" class="ms-2">email</label>
-                        <input id="email" type="email" class="form-control" name="UserEmail"   pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}">
+                        <input id="email" type="email" class="form-control" name="UserEmail" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}">
                         <small class="form-text text-mute hidden error">this field required oogit</small>
                     </div>
                     <div class="form-group">
@@ -75,5 +75,6 @@
     <link href="style.css" rel="stylesheet">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="sign_up.js"></script>
+    <script src="general.js"></script>
 </body>
 </html>
