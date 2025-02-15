@@ -12,6 +12,6 @@ if(loacal_score >=50){
     result.textContent =`Sorry ${user_name} ,you failed in this exam`;
 }
 exam_submit.addEventListener('click',()=>{
-    window.location.href = "ready_to_start.html";
+    window.location.replace("ready_to_start.html");
     window.localStorage.removeItem("total_score",score);
 })

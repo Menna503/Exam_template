@@ -4,6 +4,9 @@ const prev_arrow = document.getElementById("prev_arrow");
 const next_arrow = document.getElementById("next_arrow");
 const submit = document.getElementById("submit");
 const current_question=document.getElementById("current_question");
+const question =document.getElementById("all_Question_page");
+const img = document.getElementById("img");
+const img_status = document.getElementById("img_status");
 
 let count = 0;
 let selected_answers = [];
@@ -12,11 +15,32 @@ let data;
 console.log(answer_options);
 
 async function get_ques(params) {
-  const res = await fetch("backend.json");
-  console.log(res);
-  data = await res.json();
-  console.log(data);
-  display(data);
+  try{
+    img.src="images/loading_page.png";
+    question.classList.add("hidden_img");
+    img_status.classList.remove("hidden_img");
+
+    const res = await fetch("backend.json");
+    data = await res.json();
+    if(data.length === 0){
+      img.src="images/empty_data.jpg";
+      question.classList.add("hidden_img");
+      img_status.classList.remove("hidden_img");
+      
+    }else{
+      question.classList.remove("hidden_img");
+     img_status.classList.add("hidden_img");
+      display(data);
+    }
+   
+
+  }catch(error){
+    console.log("error :",error);
+    img.src="images/error_404.jpg";
+    question.style.display="none";
+    img_status.classList.remove("hidden_img");
+  }
+ 
   next_arrow.addEventListener("click", () => {
     const number_ques=Object.entries(data).length ;
     
@@ -43,9 +67,9 @@ async function get_ques(params) {
       console.log(`score${score}`);
       window.localStorage.setItem("total_score",score);
       if(score >=50){
-        window.location.href = "success.html";
+        window.location.replace("success.html");
       }else{
-        window.location.href = "fail.html";
+        window.location.replace("fail.html");
       }
       
       
@@ -55,11 +79,12 @@ async function get_ques(params) {
 get_ques();
 function display(data) {
   answer_options.innerHTML = "";
-  console.log(data[count].options);
-  console.log(question_title.firstElementChild);
+   console.log(data[count].options);
+   console.log(question_title.firstElementChild);
   question_title.firstElementChild.textContent = data[count].question;
   question_title.classList.remove("hidden");
   const options = data[count].options;
+  
 
   options.forEach((element) => {
     const li = document.createElement(`li`);
@@ -86,7 +111,7 @@ function display(data) {
 }
 ///////////////////////////////timer
 const timer = document.getElementById('countdown');
-let timeRemaining = 4 * 60; 
+let timeRemaining = 240 /*  4*60 */; 
 
 function formatTime(value) {
   return value < 10 ? '0' + value : value; 
@@ -99,14 +124,8 @@ const countdown = setInterval(() => {
 
   if (timeRemaining <= 0) {
     clearInterval(countdown);
-    data.forEach((element,index)=>{
-      if(element.answer===selected_answers[index]){
-          score+=10;
-          console.log(element.answer);
-      }   
-    });
     window.localStorage.setItem("total_score",score);
-    window.location.href ="Exam_closed.html";
+    window.location.replace("Exam_closed.html");
   }
   timeRemaining--;
 }, 1000); 
@@ -114,11 +133,16 @@ const countdown = setInterval(() => {
 //////////////////////////marked question
 const flag = document.getElementById('flag');
 const marked_ques = document.getElementById('marked_ques');
+
 flag.addEventListener('click',()=>{
    const flagq = document.createElement('div');
+   const num = data[count].num;
+   const ques_data = data[num];
+ 
+
    flagq.className ="bg-light rounded-1 p-2 ps-4 pe-4 d-flex justify-content-between text-center align-items-center gap-1";
    flagq.innerHTML = `
-    <span> Question ${count+1}</span>
+    <span> Question ${num}</span>
     <i class="bi bi-trash-fill" style="cursor: pointer;"></i>`;
 
     flagq.dataset.questionIndex = count;
@@ -128,8 +152,8 @@ flag.addEventListener('click',()=>{
     });
 
     flagq.addEventListener('click',()=>{
-      count = parseInt(flagq.dataset.questionIndex, 10);
+      // console.log(ques_data);
+      count = Number(flagq.dataset.questionIndex);
       display(data);
-  
     })
 })

@@ -38,9 +38,7 @@
             .sign-container {
                 height: 100vh;
                 display: flex; 
-                align-items: center;
-
-                
+                align-items: center;   
             }
             .row{
                 width: 100%;
@@ -56,9 +54,16 @@
 </head>
 
 <body>
-    <main class="sign-container " style="background-color: #dcdaed">
-        <div class="row ">
-            <div id="question" class="col-12 col-md-7 col-lg-6 rounded-3 shadow-lg bg-light p-4">
+  
+    <main class="sign-container" style="background-color: #dcdaed; height: 100vh;" >
+        <div id="img_status" class="row hidden_img" >
+            <div class="text-center col-12 col-md-7 col-lg-6 col-xs-12 p-4">
+                <img src="" id="img" class="col-10" >
+              </div>
+        </div>
+          
+        <div class="row hidden_img" id="all_Question_page">
+            <div id="question" class="col-11 m-auto mb-2 col-md-7 m-md-0 col-lg-6 rounded-3 shadow-lg bg-light p-4">
                 <p class="fs-5"><i class="bi bi-clock"></i> <span id="countdown" class="fs-5">04:00</span> </p>
                 <p class="fs-5">Choose the correct answer</p>
                 <div id="titel_ques" class="bg_blue p-2 ps-3 pe-4 rounded-2 text-light mb-1  d-flex justify-content-between  hidden">
@@ -83,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 p-2 rounded-3 col-lg-3 bg_blue">
+            <div class="col-11 m-auto mb-2 col-md-7 m-md-0 p-2 rounded-3 col-lg-3 bg_blue">
                 <p class="marke_ques text-center text-light pt-1 fs-5" >Marked Questions</p>
                 <hr class="text-light" />
                 <div id="marked_ques" class="d-flex flex-column gap-1">
