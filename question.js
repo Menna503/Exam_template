@@ -64,6 +64,7 @@ function display(data) {
     }
 
     li.addEventListener("click", () => {
+      
       li.classList.add("bg_light_blue");
       selected_answers[count] = element;
       console.log(selected_answers);
