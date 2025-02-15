@@ -48,7 +48,7 @@ function validatePassword(input) {
         showError(input, "*This field is required");
         return false;
     } else if (input.value.length < 8) {
-        showError(input, "Password should be 8 or more characters");
+        showError(input, "Invalid Password");
         return false;
     } else {
         hideError(input);
@@ -93,7 +93,7 @@ signup_form.addEventListener('submit', (e) => {
 
         inputs.forEach(input => input.value = "");
         console.log("Form submitted successfully!");
-        window.location.href = "ready_to_start.html";
+        window.location.replace("ready_to_start.html");
     }
 });
 

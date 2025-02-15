@@ -53,7 +53,7 @@ signin_form.addEventListener('submit', (e) => {
     if (isValid) {
             inputs.forEach(input => input.value = "");
             console.log("Form submitted successfully!");
-            window.location.href = "ready_to_start.html";
+            window.location.replace("ready_to_start.html");
  
     }
 });

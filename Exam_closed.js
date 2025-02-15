@@ -6,8 +6,9 @@ const loacal_score = window.localStorage.getItem('total_score');
 
 see_result.addEventListener('click',()=>{
     if(loacal_score >=50){
-        window.location.href = "success.html";
+      window.location.replace("success.html");
+      
       }else{
-        window.location.href = "fail.html";
+        window.location.replace("fail.html");
       }
 })
